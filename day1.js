@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-function processInput() {
+function processInput () {
   let input = fs.readFileSync('./Day1-Input.txt', 'utf8')
   return input.split('\n').map(Number)
 }
@@ -16,7 +16,7 @@ function PuzzleTwo (freqChanges) {
 
   while (memo.indexOf(frequency) < 0) {
     memo.push(frequency)
-    index ++
+    index++
     index = index % freqChanges.length
     frequency += freqChanges[index]
   } return frequency

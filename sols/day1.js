@@ -1,9 +1,4 @@
-const fs = require('fs')
-
-function processInput () {
-  let input = fs.readFileSync('./Day1-Input.txt', 'utf8')
-  return input.split('\n').map(Number)
-}
+const utils = require('../utils')
 
 function PuzzleOne (freqChanges) {
   return freqChanges.reduce((curr, prev) => curr + prev)
@@ -22,6 +17,6 @@ function PuzzleTwo (freqChanges) {
   } return frequency
 } // another approach might be that we need to find a chain of freq-changes that sum to 0
 
-let freqChanges = processInput()
+let freqChanges = utils.processInput('day1').map(Number)
 console.log(PuzzleOne(freqChanges))
 console.log(PuzzleTwo(freqChanges))

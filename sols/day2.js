@@ -1,9 +1,4 @@
-const fs = require('fs')
-
-function processInput () {
-  let input = fs.readFileSync('./Day2-Input.txt', 'utf8')
-  return input.split('\n')
-}
+const utils = require('../utils')
 
 function boxCount (box) {
   let counts = {}
@@ -53,6 +48,6 @@ function PuzzleTwo (boxes) {
   }
 }
 
-let boxes = processInput()
-// console.log(PuzzleOne(boxes))
+let boxes = utils.processInput('day2')
+console.log(PuzzleOne(boxes))
 console.log(PuzzleTwo(boxes))
